@@ -1,0 +1,235 @@
+/*Main Css */
+:root {
+    --primary: #2092de;
+    --bg-light: #ffdecc;
+    --bg-gray: #f4f9ff;
+    --black: #000000;
+    --white: #ffffff;
+    --dark: #333333;
+
+    --font-heading: "Uber", sans-serif;
+    --font-accent: "Inter", sans-serif;
+    --font-body: "Inter", sans-serif;
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+
+    --icon: "Font Awesome 6 Pro", sans-serif;
+}
+
+::selection {
+    background: #ff5e14;
+    color: #fff;
+    text-shadow: none;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment {
+    display: none;
+}
+
+::-webkit-scrollbar-track-piece {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+    border-radius: 10px;
+    background-color: #ff5e14;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html , body{
+    height: 100%;
+    width: 100%;
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    font-size: 16px;
+    line-height: 1;
+    color: #000000;
+    overflow-x:hidden;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    display: block;
+    font-weight: normal;
+    font-family: var(--font-heading);
+}
+nav {
+    background-color: #0F67B1;
+    align-items: center;
+    color: white;
+    padding: 15px 100px 15px 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul {
+    margin-bottom: 0;
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 30px;
+
+
+}
+ul li:last-child a{
+    background-color: #3FA2F6;
+}
+nav ul li a {
+
+    text-decoration: none;
+    letter-spacing: 2px;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 0.5s ease;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: #96C9F4;
+    color: #020202;
+}
+.manuBar span{
+    display: none;
+}
+#check {
+     display: none;
+}
+
+
+/* Comparision */
+
+@media (max-width: 1440px) {}
+
+@media (max-width: 1200px) {
+
+}
+
+@media (max-width : 1025px) {
+
+}
+
+@media (max-width : 1023px) {
+  
+}
+@media (max-width: 940px) {
+    nav {
+        padding: 10px 30px;
+        z-index: 1 !important;
+    }
+
+    nav ul {
+        left: 0px;
+        z-index: -1;
+        position: fixed;
+        top: 48px;
+        top: -103%;
+        flex-direction: column;
+        height: 53%;
+        width: 100%;
+        background-color: #0f67b1;
+        text-align: center;
+        transition: all 0.5s ease-out;
+    }
+    .manuBar span{
+        border-radius: 5px;
+        height: 4px;
+        width: 25px;
+        margin: 4px 0px;
+        background-color: #ffffff;
+        display: block;
+    }
+    #check:checked ~ .manuBar span:nth-child(2) {
+        transition: opacity 1s ease-out;
+        opacity: 0;
+    }
+    
+    #check:checked ~ .manuBar span:nth-child(1) {
+        transform: rotate(45deg) translateX(10px) translateY(2px);
+        transition: transform 1s ease;
+    }
+    
+    #check:checked ~ .manuBar span:nth-child(3) {
+        transform: rotate(-45deg) translateX(9px) translateY(-1px);
+        transition: transform 1s ease; 
+    }
+    
+    /* Transition for all spans */
+    #check ~ .manuBar span {
+        transition: transform 1s ease,
+        visibility 0.5s ease; /* Smooth transition for all transformations */
+    }
+    
+    #check:not(:checked) ~ .manuBar span:nth-child(2) {
+        opacity: 1; /* Show the second span */
+        transition: opacity 1s ease-out; /* Smooth transition for opacity */
+    }
+
+    #check:checked~ul {
+        left: 0px;
+        transition: all 0.5s ease-in;
+        top: 6%;
+    }
+
+    nav ul li {
+
+margin: 40px 0 0 0;
+}
+
+    nav ul li a {
+        font-size: 26px;
+        line-height: 0;
+        /* padding: 0px; */
+        color: #ffff;
+        margin: 0px !important;
+    }
+
+    nav ul li a.active,
+    nav ul li a:hover {
+        background-color: transparent;
+        color: #ffff;
+    }
+
+    .logo {
+        text-align: center;
+    }
+
+    .manuBar {
+        font-size: 22px;
+        cursor: pointer;
+        display: block;
+    }
+    ul li:last-child {
+       margin-top: 50px;
+    }
+    ul li:last-child a {
+        padding: 14px;
+        background-color: #3FA2F6;
+    }
+}
+
+/* Iphone X */
+@media only screen and (min-width : 375px) and (max-width : 734px) and (orientation : portrait) {}
+
+@media only screen and (min-width : 300px) and (max-width : 767px) {
+
+}
